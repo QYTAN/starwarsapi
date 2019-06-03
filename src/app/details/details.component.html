@@ -1,0 +1,36 @@
+<mat-list class="details">
+  <mat-list-item *ngFor = "let d of personDetails">
+    {{d.name}} 
+    <br>
+    Birthyear: {{d.created}}
+    <br>
+    Species: {{d.species}}
+    <br>
+    Height: {{d.height}}
+    <br>
+    Mass: {{d.mass}}
+    <br>
+    Gender: {{d.gender}}
+    <br>
+    Hair Color: {{d.hair_color}}
+    <br>
+    Skin Color: {{d.skin_color}}
+    <br>
+    Homeworld: {{d.homeworld}}
+    <br>
+    Comment: {{comment}}
+  </mat-list-item>
+</mat-list>
+
+<div class = "comment">
+  <form #form = "ngForm" (ngSubmit) = "processForm(form)">
+    <mat-form-field>
+      <input type="text" name="comment" placeholder="Enter your comment here" id=""
+      ngModel matInput required>
+    </mat-form-field>
+
+    <button type="submit" mat-raised-button color="accent" [disabled] = "form.invalid">
+    Submit</button>
+  </form>
+</div>
+

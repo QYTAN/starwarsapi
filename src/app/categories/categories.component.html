@@ -1,0 +1,25 @@
+  <mat-list-item  *ngFor="let c of categories" (click)="getPeople()">
+      <span>people: {{c.people}}</span>
+  </mat-list-item>
+  
+  <mat-list>
+    <mat-list-item >
+      {{people}}
+      <!-- <a href="{{people}}">Peoplelink</a> -->
+    </mat-list-item>
+    <mat-list-item>
+      Planets: 
+    </mat-list-item>
+    <mat-list-item>
+      Films: 
+    </mat-list-item>
+    <mat-list-item>
+      Species: 
+    </mat-list-item>
+    <mat-list-item>
+      Vehicles: 
+    </mat-list-item>
+    <mat-list-item>
+      Starships: 
+    </mat-list-item>
+  </mat-list>
