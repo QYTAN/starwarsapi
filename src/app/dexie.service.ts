@@ -13,14 +13,14 @@ export class DexieService{
     constructor(){
         this.contactDB = new Dexie('contact');
         this.contactDB.version(1).stores({
-            comments:'comment'
+            comments:'++id,comment'
         })
     }
 
     //returns a type promise
     addComment(comment: Comments): Promise<any>{
         return(
-            this.contactDB.table('comments').put(comment)
+            this.contactDB.table('comments').put({comment, id:1})
                 .then((result) =>{
                     //putting comment into event emmiter so that it can be passed to subscribe  
                     this.onNewComment.next(comment);
