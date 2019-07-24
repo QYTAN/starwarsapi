@@ -33,6 +33,13 @@ export interface personDetails {
     url: string;
 }
 
+export interface Planets {
+    count: number;
+    next: string;
+    previous: number;
+    results: Array<string>
+}
+
 export interface Comments{
     comment: string
 }

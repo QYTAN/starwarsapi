@@ -3,6 +3,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 
 const URL = 'https://swapi.co/api/';
 const PeopleURL = 'https://swapi.co/api/people/';
+const PlanetsURL = 'https://swapi.co/api/planets/';
 
 @Injectable()
 export class StarwarsService{
@@ -63,4 +64,18 @@ export class StarwarsService{
                     })
                 })
     }
+
+    //get all planets
+    getPlanets(){
+        return(this.http.get(PlanetsURL))
+            .toPromise()
+            .then(result =>{
+                return({
+                    count: result['count'],
+                    next: result['next'],
+                    previous: result['previous'],
+                    results: result['results']
+                })
+            })
+    }    
 }

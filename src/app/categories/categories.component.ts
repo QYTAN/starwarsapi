@@ -44,4 +44,24 @@ export class CategoriesComponent implements OnInit {
     //       console.info('peopleresult: ', result);
     //     })
   }
+
+  getPlanets(){
+    this.route.navigate(['/planets'])
+  }
+
+  getFilms(){
+    this.route.navigate(['/films'])
+  }
+
+  getSpecies(){
+    this.route.navigate(['/species'])
+  }
+
+  getStarships(){
+    this.route.navigate(['/starships'])
+  }
+
+  getVehicles(){
+    this.route.navigate(['/vehicles'])
+  }
 }

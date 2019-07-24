@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StarwarsService } from '../starwars.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Items } from '../model';
+import { Items, Planets } from '../model';
 import { TestBed } from '@angular/core/testing';
 
 @Component({
@@ -15,12 +15,34 @@ export class ItemsComponent implements OnInit {
 
   private items: Items[] = [];
   private people;
-
+  private planets: Planets[] = [];
+  private planet;
   // private test: string;
   // private test2: string;  
 
   ngOnInit() {
-    this.getPeople();
+    if (this.router.url == "/people"){
+      console.info("people works");
+      this.getPeople();
+    }
+    if (this.router.url == "/planets"){
+      console.info("planets works");
+      this.getPlanets();
+    }
+    if (this.router.url == "/films"){
+      console.info("films works");
+    }
+    if (this.router.url == "/species"){
+      console.info("species works");
+    }
+    if (this.router.url == "/starships"){
+      console.info("starships works");
+    }
+    if (this.router.url == "/vehicles"){
+      console.info("vehicles works");
+    }
+
+    // this.getPeople();
   }
 
   getPeople(){
@@ -47,5 +69,20 @@ export class ItemsComponent implements OnInit {
     // this.test2 = 'testing2';
     // console.info('teststring: ', `${this.test}${this.test2}`);
     this.router.navigate(['/people', personid]);
+  }
+
+  getPlanets(){
+    this.starwarsSvc.getPlanets()
+    .then(result=>{
+      this.planets.push({
+        count: result.count,
+        next: result.next,
+        previous: result.previous,
+        results: result.results,
+      })
+      this.planet= this.planets[0].results;
+      console.info('items: ',this.items);
+      console.info('people: ',this.people);
+    })
   }
 }

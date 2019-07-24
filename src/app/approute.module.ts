@@ -10,6 +10,11 @@ const ROUTES: Route[]=[
     {path:"home", component: CategoriesComponent},
     {path:"people", component: ItemsComponent},
     {path:"people/:personid", component: DetailsComponent},
+    {path:"planets", component: ItemsComponent},
+    {path:"films", component: ItemsComponent},
+    {path:"species", component: ItemsComponent},
+    {path:"starships", component: ItemsComponent},
+    {path:"vehicles", component: ItemsComponent},
     
 ]
 

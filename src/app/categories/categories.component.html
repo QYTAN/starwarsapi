@@ -1,25 +1,26 @@
-  <mat-list-item  *ngFor="let c of categories" (click)="getPeople()">
+  <!-- <mat-list-item  *ngFor="let c of categories" (click)="getPeople()">
       <span>people: {{c.people}}</span>
-  </mat-list-item>
-  
-  <mat-list>
-    <mat-list-item >
-      {{people}}
-      <!-- <a href="{{people}}">Peoplelink</a> -->
+  </mat-list-item> -->
+
+<h2>Click on people category for demostration of linking to swapi api and adding user comment</h2>
+
+  <mat-list *ngFor="let c of categories">
+    <mat-list-item  (click)="getPeople()">
+      <span>People</span>
     </mat-list-item>
-    <mat-list-item>
-      Planets: 
+    <mat-list-item  (click)="getPlanets()">
+      <span>Planets</span>
     </mat-list-item>
-    <mat-list-item>
-      Films: 
+    <mat-list-item (click)="getFilms()" >
+      <span>Films</span>
     </mat-list-item>
-    <mat-list-item>
-      Species: 
+    <mat-list-item (click)="getSpecies()" >
+      <span>Species</span>
     </mat-list-item>
-    <mat-list-item>
-      Vehicles: 
+    <mat-list-item (click)="getStarships()" >
+      <span>Starships</span>
     </mat-list-item>
-    <mat-list-item>
-      Starships: 
+    <mat-list-item (click)="getVehicles()" >
+      <span>Vehicles</span>
     </mat-list-item>
   </mat-list>
